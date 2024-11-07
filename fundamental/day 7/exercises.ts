@@ -143,26 +143,41 @@ class ShootingGame{
     this.player2 = p2
   }
 
-  getRandomItem(){
-    return Math.floor(Math.random() * 10) + 1
+
+  private random() {
+    return Math.floor(Math.random() * 2); // 0-1
+  }
+
+  private getRandomItem(): {
+    health: number;
+    power: number;
+  } {
+    return this.random() == 1
+      ? { health: 0, power: 10 }
+      : { health: 10, power: 0 };
   }
 
   start(){
     while(this.player1.health >= 0 && this.player2.health >= 0){
-      let rand1 = this.getRandomItem()
-      let rand2 = this.getRandomItem()
-      let getrand = this.getRandomItem()
-      let getrand1 = this.getRandomItem()
-      this.player1.hit(rand1)
-      this.player1.useItem(getrand)
-      this.player2.hit(rand2)
-      this.player2.useItem(getrand1)
-      this.player1.showStatus()
-      this.player2.showStatus()
+      this.player1.showStatus();
+      this.player2.showStatus();
+      this.player1.useItem(this.getRandomItem());
+      this.player2.useItem(this.getRandomItem());
+      if (this.random() > 0) {
+        this.player1.hit(this.player2.power); 
+        if (this.player1.health == 0) break;
+        this.player2.hit(this.player1.power);
+      } else {
+        this.player2.hit(this.player1.power);
+        if (this.player2.health == 0) break;
+        this.player1.hit(this.player2.power);
+      }
+    }
+    this.player1.showStatus();
+    this.player2.showStatus();
     }
   }
   
-}
 
 class Player {
   public name:string
@@ -179,10 +194,9 @@ class Player {
     this.health = this.health - power
   }
 
-  useItem(itemName:number){
-    let rndm = Math.floor(Math.random() * 2)
-    if(rndm == 1)this.health += itemName 
-    else this.power += itemName
+  useItem(item: { health: number; power: number }) {
+    this.health += item.health;
+    this.power += item.power;
   }
 
   showStatus(){
@@ -195,7 +209,7 @@ class Player {
 let player1 = new Player('Budi')
 let player2 = new Player('Santoso')
 let mulai = new ShootingGame(player1,player2)
-// console.log(mulai.start())
+console.log(mulai.start())
 
 
 // type ToBeOrNotToBe = {
