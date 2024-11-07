@@ -180,8 +180,9 @@ class Player {
   }
 
   useItem(itemName:number){
-    this.power += itemName
-    this.health += itemName
+    let rndm = Math.floor(Math.random() * 2)
+    if(rndm == 1)this.health += itemName 
+    else this.power += itemName
   }
 
   showStatus(){
