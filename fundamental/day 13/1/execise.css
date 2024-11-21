@@ -1,0 +1,296 @@
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  height: 20%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: sticky;
+  padding-top: 20px;
+}
+
+nav a {
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-variation-settings: "wdth" 100;
+  font-style: normal;
+  font-size: 14px;
+  margin-right: 15px;
+  text-decoration: none;
+  color: #2f2f2f;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Modal {
+  display: none;
+  transition: all 0.3s ease-in-out;
+  width: 35%;
+  height: max-content;
+  border-radius: 20px;
+  background-color: #fafafa;
+  box-shadow: 15px 10px 10px rgba(130, 130, 130, 0.4);
+}
+
+.close {
+  display: flex;
+  justify-content: end;
+  padding-top: 3%;
+  padding-right: 3%;
+  cursor: pointer;
+}
+
+.close img {
+  width: 18px;
+  height: 18px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.title,
+.body {
+  text-align: center;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+.title {
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #2f2f2f;
+}
+
+.body {
+  padding-top: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #2f2f2f;
+}
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.rating {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.rating img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.rating img:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+  content: url("img/Star\ Rated.svg");
+}
+
+.comment {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
+
+.comment textarea {
+  resize: none;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: #efefef;
+  border: none;
+  outline: none;
+}
+
+.comment textarea::placeholder {
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #6e6d6d;
+}
+
+.submit {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
+  padding-bottom: 8%;
+}
+
+.submit input,
+.show-btn {
+  border-radius: 5px;
+  border: none;
+  background-color: #fafafa;
+  color: #2c2c2c;
+  cursor: pointer;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  box-shadow: 4px 3px #2c2c2c;
+  border: 1px solid #2c2c2c;
+}
+
+.submit input {
+  width: 70%;
+}
+
+.submit input:hover,
+.show-btn:hover {
+  transform: scale(0.98);
+  box-shadow: 3px 2px #2c2c2c;
+}
+
+.container {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("Img/404.svg") no-repeat center;
+}
+
+.container h1 {
+  margin: 0;
+  font-family: "Sniglet", system-ui;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 64px;
+  color: #2f2f2f;
+}
+
+.container p {
+  padding-top: 6px;
+  padding-left: 380px;
+  padding-right: 380px;
+  text-align: center;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #2f2f2f;
+}
+
+.show-btn {
+  margin-top: 20px;
+  width: 30%;
+  padding: 12px;
+}
+
+@keyframes easeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    gap: 0px;
+  }
+
+  .container{
+    background-size: 100%;
+  } 
+  .title {
+    font-size: 14px;
+  }
+  
+  .body {
+    padding: 0px;
+    font-size: 12px;
+  }
+
+  .container h1 {
+    font-size: 32px;
+  }
+
+  .container p {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 14px;
+  }
+
+  .Modal {
+    margin-top: 1%;
+    width: 90%;
+  }
+
+  .rating img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .comment textarea {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Modal {
+    width: 70%;
+  }
+
+  .rating img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .comment textarea {
+    width: 85%;
+  }
+
+  .submit input {
+    width: 50%;
+  }
+
+  .body {
+    padding-top: 10px;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}

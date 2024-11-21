@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="execise.css" />
+    <title>Exercises</title>
+  </head>
+  <body>
+    <script src="exercises.js"></script>
+    <header>
+      <div class="menu">
+          <nav>
+              <a href="#">Home</a>
+              <a href="#">Service</a>
+              <a href="http://google.com"> 
+                  <img src="img/logo.svg" alt="Logo Image" />
+              </a>
+              <a href="#">Contact</a>
+              <a href="#">About</a>
+          </nav>
+      </div>
+      </div>
+    </header>
+    <main>
+      <div class="Modal">
+         <div class="close" onclick="gone()">
+           <img src="Img/X.svg" alt="close-img">
+         </div>
+         <div class="content">
+           <div class="title">
+             <h2>Share your experience!</h2>
+           </div>
+           <div class="body">
+             <p>What did you think of this article? Share your opinion by rating and give comment on this website!</p>
+           </div>
+         </div>
+         <form action="">
+           <div class="rating">
+             <input type="radio" name="rating" id="rate-1" style="display:none;">
+             <label for="rate-1"><img src="img/star.svg" alt="star"></label>
+             <input type="radio" name="rating" id="rate-2" style="display:none;">
+             <label for="rate-2"><img src="img/star.svg" alt="star"></label>
+             <input type="radio" name="rating" id="rate-3" style="display:none;">
+             <label for="rate-3"><img src="img/star.svg" alt="star"></label>
+             <input type="radio" name="rating" id="rate-4" style="display:none;">
+             <label for="rate-4"><img src="img/star.svg" alt="star"></label>
+             <input type="radio" name="rating" id="rate-5" style="display:none;">
+             <label for="rate-5"><img src="img/star.svg" alt="star"></label>
+           </div>
+           <div class="comment">
+             <textarea name="comment" id="comment" cols="37" rows="10" placeholder="Write your comment here..."></textarea>
+           </div>
+           <div class="submit">
+             <input type="submit" value="Submit">
+           </div>
+         </form>
+       </div>  
+       <div class = "container">
+          <h1>Page Not Found</h1>
+          <p>This website still on development please tell us what kind features we should add by pressing button below</p>
+          <button class="submit show-btn" onclick="show()">Just click it</button>
+       </div>
+    </main>
+  </body>
+</html>
